@@ -5,31 +5,33 @@
 }
 
 .body-container {
-  background-color: rgb(255, 208, 253);
+  background-color: rgb(250, 255, 213);
   height: 100vh;
   /* width: 100vh; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .clicker-box {
   background-color: white;
-  grid-area: 2 / 2 / span 3 / span 2;
+  grid-area: 2 / 5 / span 3 / span 3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border-style: solid;
   /* flex-wrap: wrap; */
 }
 
 .purchase-box {
   background-color: white;
-  grid-area: 2 / 6 / span 3 / span 2;
+  grid-area: 2 / 2 / span 3 / span 2;
   display: flex;
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
+  border-style: solid;
 }
 
 .shop-box {
@@ -39,4 +41,9 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border-style: solid;
+}
+
+#catLogo {
+  grid-area: 1 / 4 / span 1 / span 4;
 }
