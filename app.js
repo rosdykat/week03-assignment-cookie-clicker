@@ -21,6 +21,43 @@ imageClick.addEventListener("click", function () {
 // if there is data in local storage, update stats with this data, so the users picks up where they left off (use if > update)
 
 // ============================================================================
+
+async function getShop() {
+  const response = await fetch(
+    "https://cookie-upgrade-api.vercel.app/api/upgrades"
+  );
+  const data = await response.json();
+  const wrangledData = data;
+  // console.log(data);
+  return wrangledData;
+}
+// getShop();
+
+const shopBox = document.getElementById("shop-box");
+
+function createShop(myData) {
+  // for (let i = 0; i < apiArray.length; i++) {
+  console.log(myData);
+  const shopText = document.createElement("button");
+  shopText.textContent = `${myData.name} - cost: ${myData.cost} - increase: ${myData.increase} CPS`;
+  id = myData.id;
+  // shopText.name = myData.name;
+  // shopText.cost = myData.cost;
+  // shopText.increase = myData.increase;
+  // createShop(apiArray[i]);
+  shopBox.appendChild(shopText);
+}
+// }
+async function createShopImageAndInfo() {
+  const fetchData = await getShop();
+  fetchData.forEach((myData) => {
+    createShop(myData);
+  });
+}
+
+createShopImageAndInfo();
+// shopText.name
+
 // shop upgrades
 // fetch updates from the API
 // API url: https://cookie-upgrade-api.vercel.app/api/upgrades
