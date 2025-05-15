@@ -9,6 +9,15 @@ const stats = {
   cps: 0,
 };
 
+const imageClick = document.getElementById("imageClick");
+const cookieNum = document.getElementById("cookieNum");
+
+imageClick.addEventListener("click", function () {
+  stats.cookieCount++;
+  console.log(stats);
+  cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
+});
+
 // if there is data in local storage, update stats with this data, so the users picks up where they left off (use if > update)
 
 // ============================================================================
@@ -23,13 +32,13 @@ const stats = {
 // append it to the DOM
 // after you complete this tasks, you should see the upgrades on your website
 
-// ==============================================================================
-// the interval
-setInterval(function () {
-  stats.cookieCount += cps; // cookieCOunt = cookieCOunt + cps
-  // update the text content in the DOM with the new values
-  // save the new values in the local storage
-}, 1000);
+// // ==============================================================================
+// // the interval
+// setInterval(function () {
+//   stats.cookieCount += cps; // cookieCOunt = cookieCOunt + cps
+//   // update the text content in the DOM with the new values
+//   // save the new values in the local storage
+// }, 1000);
 
 // =============================================================================
 // game logic
