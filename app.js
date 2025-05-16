@@ -20,7 +20,14 @@ imageClick.addEventListener("click", function () {
   console.log(stats); //Not needed
   cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
   const stringifiedStats = JSON.stringify(stats.cookieCount);
+
   localStorage.setItem("CookieCount", stringifiedStats);
+  const image1 = "assets/images/DISTRIBUTION SYSTEM.png";
+  const image2 = "assets/images/cat-mouth.png";
+  imageClick.src = image2;
+  setTimeout(function () {
+    imageClick.src = image1;
+  }, 100);
 });
 
 // ============================================================================
