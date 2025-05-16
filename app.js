@@ -151,16 +151,16 @@ setInterval(function () {
   cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
   const stringifiedStats = JSON.stringify(stats.cookieCount);
   localStorage.setItem("CookieCount", stringifiedStats);
-  // To be safe, also saving the CPS every second in this setInterval
-  cpsNum.textContent = "CPS: " + stats.cps;
+  // To be safe, also saving the CPS every second in this setInterval (Nevermind, I dont think I need this)
 }, 1000);
 
 // I think now we parse the cps count local data
 const cpsNumber = localStorage.getItem("CPS");
 const parsedCpsNumber = JSON.parse(cpsNumber);
 console.log(parsedCpsNumber);
-if ((localStorage = "CPS")) {
+if (localStorage !== null) {
   stats.cps = parsedCpsNumber;
+  cpsNum.textContent = "CPS: " + stats.cps;
 }
 
 // Parsing CookieCount local data
@@ -174,10 +174,10 @@ if (parsedCountData !== null) {
   cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
 }
 
-const cpsData = localStorage.getItem("CPS");
-const parsedCpsData = JSON.parse(cpsData);
-console.log(parsedCpsData);
-if (parsedCpsData !== null) {
-  stats.cps = parsedCpsData;
-  cpsNum.textContent = "CPS: " + stats.cps;
-}
+// const cpsData = localStorage.getItem("CPS");
+// const parsedCpsData = JSON.parse(cpsData);
+// console.log(parsedCpsData);
+// if (parsedCpsData !== null) {
+//   stats.cps = parsedCpsData;
+//   cpsNum.textContent = "CPS: " + stats.cps;
+// }
