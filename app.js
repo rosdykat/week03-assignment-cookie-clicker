@@ -11,6 +11,7 @@ const stats = {
 
 const imageClick = document.getElementById("imageClick");
 const cookieNum = document.getElementById("cookieNum");
+const cpsNum = document.getElementById("cpsNum");
 
 imageClick.addEventListener("click", function () {
   stats.cookieCount++;
@@ -39,8 +40,13 @@ function createShop(myData) {
   // for (let i = 0; i < apiArray.length; i++) {
   console.log(myData);
   const shopText = document.createElement("button");
-  shopText.textContent = `${myData.name} - cost: ${myData.cost} - increase: ${myData.increase} CPS`;
+  shopText.textContent = `${myData.name} - cost: ${myData.cost} - increase: ${myData.increase} CPS:`;
   id = myData.id;
+
+  // test
+  shopText.addEventListener("click", function () {
+    shopClick(myData);
+  });
   // shopText.name = myData.name;
   // shopText.cost = myData.cost;
   // shopText.increase = myData.increase;
@@ -56,18 +62,19 @@ async function createShopImageAndInfo() {
 }
 
 createShopImageAndInfo();
-// shopText.name
+// complete
+// // shopText.name
 
-// shop upgrades
-// fetch updates from the API
-// API url: https://cookie-upgrade-api.vercel.app/api/upgrades
+// // shop upgrades
+// // fetch updates from the API
+// // API url: https://cookie-upgrade-api.vercel.app/api/upgrades
 
-// To create multiple elements in a more convenient way, use loops.
-// create DOM elements to contain the upgrades data
-// create an element
-// assign the value to its text content
-// append it to the DOM
-// after you complete this tasks, you should see the upgrades on your website
+// // To create multiple elements in a more convenient way, use loops.
+// // create DOM elements to contain the upgrades data
+// // create an element
+// // assign the value to its text content
+// // append it to the DOM
+// // after you complete this tasks, you should see the upgrades on your website
 
 // // ==============================================================================
 // // the interval
@@ -81,6 +88,40 @@ createShopImageAndInfo();
 // game logic
 // when the user clicks on the cookie, the cookieCount value goes up by 1
 // when the user clicks an upgrade, the cookie count value goes down, and the cps goes up (I think you'd use an if command for this)
+
+function shopClick(myData) {
+  if (stats.cookieCount >= myData.cost) {
+    // subtracting cost from cookie count
+    stats.cookieCount -= myData.cost;
+    // increasing shop item's cps to cps count
+    stats.cps += myData.increase;
+
+    // Updating the counters on the document by changing text content
+    cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
+    cpsNum.textContent = "CPS: " + stats.cps;
+    console.log("Upgrade bought!", stats);
+  }
+}
+
+setInterval(function () {
+  // cookie count = cookie count + cookie stats number per second
+  stats.cookieCount += stats.cps;
+  cookieNum.textContent = "Cat Counter " + stats.cookieCount;
+}, 1000);
+
+// // const shopClick = document.querySelector("shop-box");
+// const shopClick = document.getElementById("shop-box");
+
+// shopClick.addEventListener("click", function () {
+//   // shopClick.forEach((shopLogic) => {
+//   stats.cps + myData.increase;
+//   console.log(stats.cps);
+// });
+
+// imageClick.addEventListener("click", function () {
+//   stats.cps +
+//   console.log(stats);
+//   cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
 
 // you will need functions to contain the game logic
 // to create the logic of the shop, you could have per upgrade OR a reusable function that works for all upgrades (buy upgrades function with different parameters, when attached to dif parameters will use that upgrade, tidier but might be more confusing)
