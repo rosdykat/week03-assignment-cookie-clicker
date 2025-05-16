@@ -17,7 +17,18 @@ imageClick.addEventListener("click", function () {
   stats.cookieCount++;
   console.log(stats);
   cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
+  const stringifiedStats = JSON.stringify(stats.cookieCount);
+  localStorage.setItem("CookieCount", stringifiedStats);
 });
+
+// // This code is an if command that checks if local storage contains cookiecountdata, stats.cookiecount = parsedcountdata. We are setting the data within the function, and then retrieving then creating the parsed data outside the function.
+
+// const cookieCountData = localStorage.getItem("CookieCount");
+// const parsedCountData = JSON.parse(cookieCountData);
+// console.log(parsedCountData);
+// if ((localStorage = "CookieCountData")) {
+//   stats.cookieCount = parsedCountData;
+// }
 
 // if there is data in local storage, update stats with this data, so the users picks up where they left off (use if > update)
 
@@ -100,6 +111,11 @@ function shopClick(myData) {
     cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
     cpsNum.textContent = "CPS: " + stats.cps;
     console.log("Upgrade bought!", stats);
+
+    // I think local storage for CPS will go here
+
+    const stringifiedStats = JSON.stringify(stats.cps);
+    localStorage.setItem("CPS", stringifiedStats);
   }
 }
 
@@ -127,3 +143,41 @@ setInterval(function () {
 // to create the logic of the shop, you could have per upgrade OR a reusable function that works for all upgrades (buy upgrades function with different parameters, when attached to dif parameters will use that upgrade, tidier but might be more confusing)
 
 // since we are using local storage, make sure that the ulocal storage values are updated after the user buys an upgrade OR when the user clicks on the cookie
+
+// This code is an if command that checks if local storage contains cookiecountdata, stats.cookiecount = parsedcountdata. We are setting the data within the function, and then retrieving then creating the parsed data outside the function.
+
+// Set interval to save local storage every second - I think this works
+setInterval(function () {
+  cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
+  const stringifiedStats = JSON.stringify(stats.cookieCount);
+  localStorage.setItem("CookieCount", stringifiedStats);
+  // To be safe, also saving the CPS every second in this setInterval
+  cpsNum.textContent = "CPS: " + stats.cps;
+}, 1000);
+
+// I think now we parse the cps count local data
+const cpsNumber = localStorage.getItem("CPS");
+const parsedCpsNumber = JSON.parse(cpsNumber);
+console.log(parsedCpsNumber);
+if ((localStorage = "CPS")) {
+  stats.cps = parsedCpsNumber;
+}
+
+// Parsing CookieCount local data
+// Initially had an issue as my if command was if (localdata = "CookieCount" and another for "CPS", however when you have two ifs for Local Data, they overwrite eachother. the !== is basically saying if the ParsedCounta data isn't null (so any value), update the cookieCount)
+const cookieCountData = localStorage.getItem("CookieCount");
+const parsedCountData = JSON.parse(cookieCountData);
+console.log(parsedCountData);
+if (parsedCountData !== null) {
+  stats.cookieCount = parsedCountData;
+  // I also did not notice that I needed this line of code until I was updating both parsed data - this is the text that updates the counter with the current stats. I didn't need it when I was just tracking the cookieCount as it was being added every second through my set Interval
+  cookieNum.textContent = "Cat Counter: " + stats.cookieCount;
+}
+
+const cpsData = localStorage.getItem("CPS");
+const parsedCpsData = JSON.parse(cpsData);
+console.log(parsedCpsData);
+if (parsedCpsData !== null) {
+  stats.cps = parsedCpsData;
+  cpsNum.textContent = "CPS: " + stats.cps;
+}
