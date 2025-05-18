@@ -2,7 +2,7 @@
 
 Cookie Clicker assignment - The Cat Distribution system
 
-## Desctription
+## Description
 
 The Cat Distribution System is a Cookie Clicker game, tap on the animated cat to increase your cat counter and purchase upgrades in the shop to increase your CPS (Cats Per Second). Have fun collecting cats!
 
