@@ -32,7 +32,7 @@ Lastly, I created a mobile phone version using @media in css, I did not have too
 
 ## Reflection
 
-Compared to last weeks assigntment, I was surprised with how I got on with this task. Last week, I think my biggest challenge was utitlising all the javascript we learnt in our workshops, as it was still new I did not really understand how most of what we learned yet - such as functions, creating elements to the DOM etc. It's starting to stick in which allowed me to navigate JavaScript much easier and successfully problem solve using what i've learnt (as well as some googling).
+Compared to last weeks assigntment, I was surprised with how I got on with this task. Last week, I think my biggest challenge was utitlising all the javascript we learnt in our workshops, as it was still new I did not really understand how most of what we learned actually worked - such as functions, creating elements to the DOM etc. It's starting to stick, which allowed me to navigate JavaScript much easier and successfully problem solve using what i've learnt (as well as some googling).
 
 My biggest struggle however was fetching and deploying the API data. Although I did successfully do this in the end, I don't fully understand how it works. I've added annotations to all of my JavaScript to walk through my steps, this is mainly for myself as it helps me understand any code that I may have not fully understood.
 
