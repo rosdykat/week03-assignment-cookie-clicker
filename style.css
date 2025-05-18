@@ -108,6 +108,91 @@
 
 @media screen and (max-width: 600px) {
   body {
-    background-color: lightblue;
+    background-color: rgb(250, 255, 213);
+    height: 100vh;
+    width: 100vw;
+    /* width: 100vh; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 6fr;
+  }
+
+  .clicker-text {
+    grid-area: 2 / 1 / span 1 / span 3;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: pink;
+    place-self: baseline center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .clicker-box {
+    background-color: white;
+    grid-area: 3 / 1 / span 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-style: solid;
+    /* flex-wrap: wrap; */
+  }
+
+  .purchase-box {
+    background-color: white;
+    grid-area: 5 / 1 / span 4 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    border-style: solid;
+    /* position: relative; */
+    padding: 20px;
+    line-height: 2;
+  }
+
+  .purchase-text {
+    grid-area: 4 / 1 / span 1 / span 1;
+    background-color: pink;
+    place-self: baseline center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    /* position: absolute; */
+  }
+
+  #catLogo {
+    grid-area: 1 / 1 / span 1 / span 3;
+    place-self: center center;
+    width: 50%;
+  }
+
+  .shop-box {
+    background-color: white;
+    grid-area: 5 / 2 / span 6 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-style: solid;
+  }
+
+  .shop-text {
+    grid-area: 4 / 2 / span 3 / span 2;
+    background-color: pink;
+    place-self: baseline center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+
+  #reset-button {
+    grid-area: 1 / 3 / span 1 / span 1;
+    width: 50%;
+    height: 20%;
+    /* place self --> vertial, horizontal */
+    place-self: start right;
   }
 }
