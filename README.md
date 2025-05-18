@@ -20,7 +20,7 @@ Reset the counter to start from scratch!
 
 I first created a wireframe for the website to have a rough plan on how I wanted the website to look. This helped me figure out what elements needed to be grouped together in the relevant divisions and sections. This also helped me figure out how I wanted my grid on the website. I essentially created around 10 evenly sized 1fr columns, this allowed for easy customisation as if i wanted a small box, it could be the size of 1 column, whereas if I wanted it larger, I could just increase the amount of columns it fills, also keeping all the elements on the website uniform and equal size.
 
-I have attached the wireframe in my assets folder, however I found that I actually changed the layout as I worked on the website. However, I think the wireframe was still useful as an initial guideline.
+I have attached the wireframe in my assets folder, however I found that I actually changed the layout as I worked on the website, but I still think the wireframe was useful as an initial guideline.
 
 After creating the wireframe, I put in the initial elements such as the clicker image, logo, and text into the HTML and created the Grid on CSS. I wanted to be able to make a rough version of the website by putting the boxes (shop boxp purchase box, clicker box, logo) where I think I wanted them to be before I got into the Javascript.
 
