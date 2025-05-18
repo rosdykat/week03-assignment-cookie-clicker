@@ -9,8 +9,11 @@ The Cat Distribution System is a Cookie Clicker game, tap on the animated cat to
 ## How to play
 
 Tap the cat to increase your Cat Counter and animate the cat clicker
+
 Purchase upgrades in the shop to increase your CPS (Cats Per Second) and passively gain cats every second
+
 View your purchase history in the purchases box
+
 Reset the counter to start from scratch!
 
 ## Process
